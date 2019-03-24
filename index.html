@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Train Schedule</title>
+  <link rel='stylesheet' href='./assets/css/reset.css'>
+  <link rel='stylesheet' href='./assets/css/style.css'>
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js'></script>
+</head>
+  
+<body>
+  <div class='container'>
+    <div class='row'>
+      <div class='col s12'>
+        <div class='card-panel green darken-3'>
+          <h3 class='white-text'>Train Schedule Administrator</h3>
+          <div class='card-content'>
+            <h6 class='white-text'>Overview of currently scheduled trains and train schedule submission tool</h6>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+    <div class='row'>
+        <div class='col s12'>
+          <h4 class='green-text text-darken-3'>Train Schedule</h4>
+          <table id='train-table' class='striped responsive-table'>
+            <thead class='green-text text-darken-3'>
+              <tr>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Frequency (min)</th>
+                <th>Next Arrival</th>
+                <th>Minutes Away</th>
+              </tr>
+            </thead>
+            <div class='divider'></div>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>  
+
+      <div class='row'>
+        <div class='col s12'>
+          <h4 class='green-text text-darken-3'>Train Submission Tool</h4>
+          <div class='divider'></div>
+          <form class='section'>
+            <div>
+              <label>Train Name</label>
+              <input class='form-control' id='train-name-input' placeholder='type here' type='text'>
+            </div>
+            <div>
+              <label>Destination</label>
+              <input class='form-control' id='destination-input' type='text'>
+            </div>
+            <div> 
+              <label id='test'>First Train Time (24 hr format - HHmm)</label>
+              <input class='form-control' id='train-time-input' type='number' placeholder='0000'>
+            </div>
+            <div>
+              <label>Frequency (min)</label>
+              <input class='form-control validate' id='frequency-input' type='number'>
+            </div>
+          </form>
+          <button class='btn waves-effect waves-light green darken-3' id='submit-train-btn'>Log Train</button>
+        </div>
+      </div>
+
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='./assets/scripts/schedule.js'></script>
+
+</body>
+</html>
